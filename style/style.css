@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: titulo;
+    src: url(/fonts/Warpen.ttf);
+}
+#contenedor{
+    width: 100vw;
+    height: 59rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#13142D 50%,white,rgba(92, 108, 255, 0.568))
+}
+.name{
+    width: 100vw;
+    text-align: center;
+    color: white;
+    font-family: titulo;
+    font-size: 7rem;
+}
+.creat{
+    width: 100vw;
+    height: 2rem;
+}

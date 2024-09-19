@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 50vw;
+    background-color: #1A1C48;
+}
+#titulo{
+    color: white;
+    font-size: 3vw;
+    text-align: center;
+    width: 100vw;
+    height: 6vw;
+    border: 1px solid white;
+}
+#info-D{
+    position: absolute;
+    top: 6vw;
+    border: 1px solid white;
+    width: 20vw;
+    height: 30vw;
+}
+#porcentajes-A{
+    position: absolute;
+    left: 20vw;
+    width: 59vw;
+    height: 8vw;
+    border: 1px solid white;
+}
+#imagen{
+    position: absolute;
+    top: 14vw;
+    left: 40vw;
+    width: 20vw;
+    height: 20vw;
+    border: 1px solid white;
+}
+#Info-I{
+    position: absolute;
+    top: 6vw;
+    left: 79vw;
+    border: 1px solid white;
+    width: 20vw;
+    height: 30vw;
+}
+#barra_AB{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 44vw;
+    width: 100vw;
+    height: 6vw;
+   
+}
+#barraazul{
+    width: 60vw;
+    border-top: solid transparent 0px ;
+    border-left: solid transparent 50px;
+    border-right: solid transparent 50px;
+    border-bottom: solid #010220 40px;  
+    border-radius: 1vw 1vw 0vw 0vw ;
+}
+#linea{
+    position: absolute;
+    top: 5vw;
+    width: 72vw;
+    border: 0.5vw solid #010220;
+    border-radius: 1vw 1vw 0vw 0vw ;
+}
+#pasar-Pagina{
+    width: 25vw;
+    height: 3vw;
+    position: absolute;
+    top: 1vw;
+    left: 80vw;
+    display: flex;
+    padding: 4px 20px ;
+}
+ul{
+    margin: 0 1vw;
+}
+ul li{
+    display: inline-block;
+    background-color: #010220;
+    width: 2vw;
+    height: 2vw;
+    font-size: 1.2vw;
+    text-align: center;
+    line-height: 2vw;
+    margin: 0 0.2vw;
+    cursor: pointer;
+    border-radius: 50vw;
+    color: white;
+   
+}
+ul li.active{
+    color: #fff;
+    background-image: linear-gradient(#ffffff,#030b35);
+    color: black;
+    background-repeat: no-repeat;
+}
+.btn1 , .btn2{
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}

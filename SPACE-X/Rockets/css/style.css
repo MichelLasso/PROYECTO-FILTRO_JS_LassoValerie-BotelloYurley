@@ -47,7 +47,7 @@ body{
     height: 30vw;
 }
 #barra_AB{
-  
+    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +62,7 @@ body{
     border-top: solid transparent 0px ;
     border-left: solid transparent 50px;
     border-right: solid transparent 50px;
-    border-bottom: solid #010220 40px;  
+    border-bottom: solid #010220 60px;  
     border-radius: 1vw 1vw 0vw 0vw ;
 }
 #linea{

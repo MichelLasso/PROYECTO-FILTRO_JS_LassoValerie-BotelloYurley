@@ -6,11 +6,11 @@
 body{
     width: 100vw;
     height: 50vw;
-    background-color: #1A1C48;
+    background-color: #13142D;
 }
 #titulo{
     color: white;
-    font-size: 3vw;
+    font-size: 5vw;
     text-align: center;
     width: 100vw;
     height: 6vw;
@@ -47,7 +47,6 @@ body{
     height: 30vw;
 }
 #barra_AB{
-    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,6 +54,7 @@ body{
     top: 44vw;
     width: 100vw;
     height: 6vw;
+    overflow: hidden;
    
 }
 #barraazul{
@@ -62,30 +62,30 @@ body{
     border-top: solid transparent 0px ;
     border-left: solid transparent 50px;
     border-right: solid transparent 50px;
-    border-bottom: solid #010220 60px;  
+    border-bottom: solid #010220 80px;  
     border-radius: 1vw 1vw 0vw 0vw ;
 }
 #linea{
     position: absolute;
     top: 5vw;
-    width: 72vw;
+    width: 100vw;
     border: 0.5vw solid #010220;
     border-radius: 1vw 1vw 0vw 0vw ;
 }
 #pasar-Pagina{
-    width: 25vw;
+    width: 15vw;
     height: 3vw;
     position: absolute;
     top: 1vw;
-    left: 80vw;
+    left: 83vw;
     display: flex;
     padding: 4px 20px ;
 }
-a{
+#a{
     text-decoration: none;
     margin: 0 1vw;
 }
-a{
+#a{
     display: inline-block;
     background-color: #010220;
     width: 2vw;
@@ -99,7 +99,7 @@ a{
     color: white;
    
 }
-a.active{
+#a.active{
     color: #fff;
     background-image: linear-gradient(#ffffff,#030b35);
     color: black;
@@ -113,9 +113,61 @@ a.active{
     cursor: pointer;
     outline: none;
 }
-img{
+#barraazul{
+    display: inline-block;
+
+}
+#image{
     position: absolute;
-    width: 2vw;
-    height: 2vw;
-    z-index: 2;
+    left: 27vw;
+    top: 1.5vw;
+    width: 3vw;
+    height: 3vw;
+}
+#image1{
+    position: absolute;
+    left:38vw;
+    top: 1.5vw;
+    width: 3vw;
+    height: 3vw;
+  
+}
+#image2{
+    position: absolute;
+    left: 48vw;
+    top: 1.5vw;
+    width: 3vw;
+    height: 3vw;
+}
+#image3{
+    position: absolute;
+    left:58vw;
+    top: 1.5vw;
+    width: 3vw;
+    height: 3vw;
+  
+}
+#image4{
+    position: absolute;
+    left:68vw;
+    top: 1.5vw;
+    width: 3vw;
+    height: 3vw;
+  
+}
+#info1{
+    color: white;
+    font-size: 1.5vw;
+    margin: 0 3vw 2vw;
+}
+progress{
+   
+    margin: 0 3vw 0vw;
+    height: 1.5vw;
+}
+
+#info2{
+    color: white;
+    font-size: 1vw;
+    margin: 1.5vw 3vw 0vw;
 }

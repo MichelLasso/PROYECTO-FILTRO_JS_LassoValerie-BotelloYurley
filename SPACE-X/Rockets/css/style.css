@@ -81,10 +81,11 @@ body{
     display: flex;
     padding: 4px 20px ;
 }
-ul{
+a{
+    text-decoration: none;
     margin: 0 1vw;
 }
-ul li{
+a{
     display: inline-block;
     background-color: #010220;
     width: 2vw;
@@ -92,13 +93,13 @@ ul li{
     font-size: 1.2vw;
     text-align: center;
     line-height: 2vw;
-    margin: 0 0.2vw;
+    margin: 0 0.5vw;
     cursor: pointer;
     border-radius: 50vw;
     color: white;
    
 }
-ul li.active{
+a.active{
     color: #fff;
     background-image: linear-gradient(#ffffff,#030b35);
     color: black;
@@ -111,4 +112,10 @@ ul li.active{
     color: white;
     cursor: pointer;
     outline: none;
+}
+img{
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    z-index: 2;
 }

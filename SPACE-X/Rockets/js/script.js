@@ -10,17 +10,18 @@ function fun11(event){
         }
         event.target.classList.add("active");
         valu=event.target.value;
+        console.log(valu)
         
     }
     function btnprev(){
-        if(valu>1){
+        if(valu>0){
             for( let i of link){
                 i.classList.remove("active");
             }
             link[valu-1].classList.add("active");
         }
     }
- 
+    btnprev()
     function btnnext(){
         if(valu<4){
             for( let i of link){
@@ -29,8 +30,8 @@ function fun11(event){
             link[valu+1].classList.add("active");
         }
     }
-   
-   
+
+    btnnext()
   
     fetch("https://api.spacexdata.com/v4/rockets")
     .then(res=>res.json())

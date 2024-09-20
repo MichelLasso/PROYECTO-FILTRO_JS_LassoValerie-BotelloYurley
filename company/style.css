@@ -20,7 +20,7 @@
 
 #contenedor {
     display: grid;
-    width: 100%;
+    width: 100vw;
     height: 59.05rem;
     background: #13142D;
 }
@@ -218,7 +218,7 @@ h1 {
 }
 
 span {
-    color: red;
+    color: #d82e30;
 }
 
 .headquarters {
@@ -251,6 +251,7 @@ span {
 
 #barra_AB {
     display: flex;
+    margin-top: -5.8rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -262,7 +263,7 @@ span {
     width: 60rem;
     display: flex;
     justify-content: space-evenly;
-    margin-top: -3.2rem;
+    margin-top: 0rem;
     border-top: solid transparent 0px;
     border-left: solid transparent 50px;
     border-right: solid transparent 50px;
@@ -271,19 +272,22 @@ span {
 }
 
 #linea {
-    width: 86rem;
+    margin-top: 0rem;
+    width: 99vw;
     border: 0.5vw solid #010220;
     border-radius: 1vw 1vw 0vw 0vw;
 }
 .icon {
-    width: 2rem;
+    position: relative;
+    top: 4.5rem;
+    width: 3rem;
 }
 @media only screen and (min-width : 320px) and (max-width : 480px) {
     #contenedor {
         height: 135rem;
     }
     #name {
-        font-size: 4rem;
+        font-size: 3rem;
         display: flex;
         justify-content: center;
         width: 100vw;
@@ -319,7 +323,7 @@ span {
         border: 2px solid white;
     }
     #contPart1{
-        margin-left: 2rem;
+        margin-left: 0rem;
         width: 100vw;
         height: 60rem;
         
@@ -332,7 +336,7 @@ span {
         flex-direction: column;
         height: 30rem;
         align-items: center;
-        margin-left: 2rem;
+        margin-left: 0rem;
     }
     .lugarSpaceX{
         width: auto;
@@ -361,17 +365,17 @@ span {
     #summary {
         width: 100vw;
         height: 8rem;
-        margin-left: 2rem;
+        margin-left: 0rem;
         margin-top: 0;
         font-size: 0.7rem;
     }
     
     .links { 
         width: 100vw;
-        margin-left: 2rem;
+        margin-left: 0rem;
         margin-top: -2rem;
         display: flex;
-        align-items: start;
+        align-items: center;
         flex-direction: column;
         height: 10rem;
     }
@@ -407,9 +411,8 @@ span {
         margin: 0.5rem;
     }
     #barraazul {
-        background-color: #010220;
         margin-top: 7rem;
-        margin-left: 3rem;
+        margin-left: 0rem;
         width: 100vw;
         display: flex;
         justify-content: space-around;
@@ -420,7 +423,7 @@ span {
         border: none;
     }
     .icon{
-        width: 3rem;
+        width: 2.5rem;
         cursor: pointer;
     }
 }  

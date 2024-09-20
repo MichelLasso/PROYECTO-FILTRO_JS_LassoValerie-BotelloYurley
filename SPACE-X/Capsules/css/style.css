@@ -20,71 +20,6 @@
     height: 50vw;
     background-color: #13142D;
 }
-#titulo{
-    font-family: titulo;
-    color: white;
-    font-size: 5vw;
-    text-align: center;
-    width: 100vw;
-    height: 6vw;
-    position: absolute;
-    top: 1vw;
-  
-}
-#info-D{
-    font-family: normalLetra;
-    color: #fff;
-    position: absolute;
-    top: 6vw;
-    width: 26vw;
-    height: 35vw;
-    box-shadow:0vw 1vw 2vw 1vw#262938,
-    0vw 0.5vw 0.5vw 0.5vw#f7f7f7;
-}
-h1{
-    margin-left: 1.2vw;
-    margin-top:0.5vw ;
-    font-size: 1.2vw;
-}
-#porcentajes-A{
-    position: absolute;
-    left: 26vw;
-    top: 6vw;
-    width: 53vw;
-    height: 8vw;
-    border: 1px solid white;
-}
-#imagen{
-    position: absolute;
-    top: 14vw;
-    left: 42vw;
-    width: 20vw;
-    height: 20vw;
-    border-radius: 1vw;
-    box-shadow:0vw 1vw 2vw 1vw#262938,
-    0vw 0.5vw 0.5vw 0.5vw#f7f7f7;
-}
-#Info-I{
-    font-family: normalLetra;
-    position: absolute;
-    top: 6vw;
-    left: 79vw;
-    width: 20vw;
-    height: 35vw;
-    box-shadow:0vw 1vw 2vw 1vw#262938,
-    0vw 0.5vw 0.5vw 0.5vw#f7f7f7;
-}
-#infocohete{
-    font-family: normalLetra;
-    color: #fff;
-    display: flex;
-    text-align: center;
-    width: 45vw;
-    height: 4vw;
-    position: absolute;
-    top: 37vw;
-    left: 33vw;
-}
 #barra_AB{
     display: flex;
     justify-content: center;
@@ -112,7 +47,7 @@ h1{
     border-radius: 1vw 1vw 0vw 0vw ;
 }
 #pasar-Pagina{
-    width: 18vw;
+    width: 22vw;
     height: 3vw;
     position: absolute;
     top: 1vw;
@@ -194,30 +129,4 @@ ul li.active{
     width: 3vw;
     height: 3vw;
   
-}
-#info1{
-    color: white;
-    font-size: 1.5vw;
-    margin: 0 3vw 2vw;
-}
-progress{
-   
-    margin: 0 3vw 0vw;
-    height: 1.5vw;
-}
-
-#info2{
-    color: white;
-    font-size: 1vw;
-    margin: 1.5vw 3vw 0vw;
-}
-#enlace{
-    color: white;
-    text-decoration: none;
-}
-#fotosnaves{
-    z-index: 2;
-    width: 20vw;
-    height: 20vw;
-    border-radius: 1vw;
 }

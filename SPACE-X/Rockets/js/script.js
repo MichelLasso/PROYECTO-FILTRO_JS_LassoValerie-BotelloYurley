@@ -6,14 +6,14 @@ function mostrar(){
             ${data[0].name}
         `
         document.getElementById("info-D").innerHTML=`
-            <h1>Country:<br> ${data[0].country}</h1><br>
-            <h1>Cost: <br>${data[0].cost_per_launch}</h1><br>
-            <h1>First Flight:<br> ${data[0].first_flight}</h1><br>
-            <h1>Description:<br> ${data[0].description}</h1><br>
-            <h1>Wikipedia:<br> <a id="enlace"href="${data[0].wikipedia}">${data[0].wikipedia}</a></h1>
+            <h1><span>Country</span><br> ${data[0].country}</h1><br>
+            <h1><span>Cost</span> <br>${data[0].cost_per_launch}</h1><br>
+            <h1><span>First Flight</span><br> ${data[0].first_flight}</h1><br>
+            <h1><span>Description<br></span> ${data[0].description}</h1><br>
+            <h1><span>Wikipedia<span><br> <a id="enlace"href="${data[0].wikipedia}">${data[0].wikipedia}</a></h1>
         `
         document.getElementById("imagen").innerHTML=`
-            <img id="fotosnaves" src="" alt="">
+            <img id="fotosnaves" src="/SPACE-X/img/falcon1.webp" alt="">
         `
         /*let esto=data[0].flickr_images
         esto.forEach(element => {
@@ -24,12 +24,12 @@ function mostrar(){
 
         });*/
         document.getElementById("infocohete").innerHTML=`
-            <h1>Type: <br>${data[0].type}</h1><br>
-            <h1>Propellant_1:<br> ${data[0].engines.propellant_1}</h1><br>
-            <h1>Propellant_1:<br> ${data[0].engines.propellant_2}</h1><br>
-            <h1>Version:<br> ${data[0].engines.version}</h1><br>
-            <h1>Layout:<br>${data[0].engines.layout} </h1>
-            <h1>Number:<br>${data[0].engines.number} </h1>
+            <h4><span>Type</span> <br>${data[0].type}</h4><br>
+            <h4><span>Propellant1</span><br> ${data[0].engines.propellant_1}</h4><br>
+            <h4><span>Propellant2</span><br> ${data[0].engines.propellant_2}</h4><br>
+            <h4><span>Version</span><br> ${data[0].engines.version}</h4><br>
+            <h4><span>Layout</span><br>${data[0].engines.layout} </h4>
+            <h4><span>Number</span><br>${data[0].engines.number} </h4>
         `
     })
 }
@@ -50,35 +50,7 @@ function fun11(event){
             event.target.classList.add("active");
             valor=event.target.value;
             if(valor==1){
-                document.getElementById("titulo").innerHTML=`
-                    ${data[0].name}
-                `
-                document.getElementById("info-D").innerHTML=`
-                    <h1>Country:<br> ${data[0].country}</h1><br>
-                    <h1>Cost: <br>${data[0].cost_per_launch}</h1><br>
-                    <h1>First Flight:<br> ${data[0].first_flight}</h1><br>
-                    <h1>Description:<br> ${data[0].description}</h1><br>
-                    <h1>Wikipedia:<br> <a id="enlace"href="${data[0].wikipedia}">${data[0].wikipedia}</a></h1>
-                `
-                document.getElementById("imagen").innerHTML=`
-                        <img id="fotosnaves" src="" alt="">
-                    `
-                /*let esto=data[0].flickr_images
-                esto.forEach(element => {
-                    console.log(element)
-                    document.getElementById("imagen").innerHTML+=`
-                        <img id="fotosnaves" style=display="flex" src="${element}" alt="">
-                    `
-                
-                });*/
-                document.getElementById("infocohete").innerHTML=`
-                    <h1>Type: <br>${data[0].type}</h1><br>
-                    <h1>Propellant_1:<br> ${data[0].engines.propellant_1}</h1><br>
-                    <h1>Propellant_1:<br> ${data[0].engines.propellant_2}</h1><br>
-                    <h1>Version:<br> ${data[0].engines.version}</h1><br>
-                    <h1>Layout:<br>${data[0].engines.layout} </h1>
-                    <h1>Number:<br>${data[0].engines.number} </h1>
-                 `
+                mostrar()
                 
             }
             if(valor==2){
@@ -87,11 +59,11 @@ function fun11(event){
                     ${data[1].name}
                 `
                 document.getElementById("info-D").innerHTML=`
-                    <h1>Country: <br>${data[1].country}</h1><br>
-                    <h1>Cost:<br> ${data[1].cost_per_launch}</h1><br>
-                    <h1>First Flight:<br> ${data[1].first_flight}</h1><br>
-                    <h1>Description:<br> ${data[1].description}</h1><br>
-                    <h1>Wikipedia:<br> <a id="enlace"href="${data[1].wikipedia}">${data[1].wikipedia}</a></h1>
+                    <h1><span>Country</span> <br>${data[1].country}</h1><br>
+                    <h1><span>Cost</span><br> ${data[1].cost_per_launch}</h1><br>
+                    <h1><span>First Flight</span><br> ${data[1].first_flight}</h1><br>
+                    <h1><span>Description</span><br> ${data[1].description}</h1><br>
+                    <h1><span>Wikipedia</span><br> <a id="enlace"href="${data[1].wikipedia}">${data[1].wikipedia}</a></h1>
                 `
                 let esto=data[1].flickr_images
                 esto.forEach(element => {
@@ -102,12 +74,12 @@ function fun11(event){
                 
                 })
                 document.getElementById("infocohete").innerHTML=`
-                    <h1>Type: <br>${data[1].type}</h1><br>
-                    <h1>Propellant_1:<br> ${data[1].engines.propellant_1}</h1><br>
-                    <h1>Propellant_1:<br> ${data[1].engines.propellant_2}</h1><br>
-                    <h1>Version:<br> ${data[1].engines.version}</h1><br>
-                    <h1>Layout:<br>${data[1].engines.layout} </h1>
-                    <h1>Number:<br>${data[1].engines.number} </h1>
+                    <h4><span>Type</span> <br>${data[1].type}</h4><br>
+                    <h4><span>Propellant1</span><br> ${data[1].engines.propellant_1}</h4><br>
+                    <h4><span>Propellant2</span><br> ${data[1].engines.propellant_2}</h4><br>
+                    <h4><span>Version</span><br> ${data[1].engines.version}</h4><br>
+                    <h4><span>Layout</span><br>${data[1].engines.layout} </h4>
+                    <h4><span>Number</span><br>${data[1].engines.number} </h4>
                 `
             }
             if(valor==3){
@@ -116,11 +88,11 @@ function fun11(event){
                     ${data[2].name}
                 `
                 document.getElementById("info-D").innerHTML=`
-                    <h1>Country:<br> ${data[2].country}</h1><br>
-                    <h1>Cost: <br>${data[2].cost_per_launch}</h1><br>
-                    <h1>First Flight:<br> ${data[2].first_flight}</h1><br>
-                    <h1>Description: <br>${data[2].description}</h1><br>
-                    <h1>Wikipedia:<br> <a id="enlace"href="${data[2].wikipedia}">${data[2].wikipedia}</a></h1>
+                    <h1><span>Country</span><br> ${data[2].country}</h1><br>
+                    <h1><span>Cost </span><br>${data[2].cost_per_launch}</h1><br>
+                    <h1><span>First Flight</span><br> ${data[2].first_flight}</h1><br>
+                    <h1><span>Description</span> <br>${data[2].description}</h1><br>
+                    <h1><span>Wikipedia</span><br> <a id="enlace"href="${data[2].wikipedia}">${data[2].wikipedia}</a></h1>
                 `
                 let esto=data[2].flickr_images
                 esto.forEach(element => {
@@ -131,12 +103,12 @@ function fun11(event){
                 
                 })
                 document.getElementById("infocohete").innerHTML=`
-                    <h1>Type: <br>${data[2].type}</h1><br>
-                    <h1>Propellant_1:<br> ${data[2].engines.propellant_1}</h1><br>
-                    <h1>Propellant_1:<br> ${data[2].engines.propellant_2}</h1><br>
-                    <h1>Version:<br> ${data[2].engines.version}</h1><br>
-                    <h1>Layout:<br>${data[2].engines.layout} </h1>
-                    <h1>Number:<br>${data[2].engines.number} </h1>
+                    <h4><span>Type</span><br>${data[2].type}</h4><br>
+                    <h4><span>Propellant1</span><br> ${data[2].engines.propellant_1}</h4><br>
+                    <h4><span>Propellant2</span><br> ${data[2].engines.propellant_2}</h4><br>
+                    <h4><span>Version</span><br> ${data[2].engines.version}</h4><br>
+                    <h4><span>Layout</span><br>${data[2].engines.layout} </h4>
+                    <h4><span>Number</span><br>${data[2].engines.number} </h4>
                 `
             }
             if(valor==4){
@@ -145,11 +117,11 @@ function fun11(event){
                     ${data[3].name}
                 `
                 document.getElementById("info-D").innerHTML=`
-                    <h1>Country:<br> ${data[3].country}</h1><br>
-                    <h1>Cost: <br>${data[3].cost_per_launch}</h1><br>
-                    <h1>First Flight:<br> ${data[3].first_flight}</h1><br>
-                    <h1>Description:<br> ${data[3].description}</h1><br>
-                    <h1>Wikipedia:<br> <a id="enlace"href="${data[3].wikipedia}">${data[3].wikipedia}</a></h1> 
+                    <h1><span>Country</span><br> ${data[3].country}</h1><br>
+                    <h1><span>Cost</span> <br>${data[3].cost_per_launch}</h1><br>
+                    <h1><span>First Flight</span><br> ${data[3].first_flight}</h1><br>
+                    <h1><span>Description</span><br> ${data[3].description}</h1><br>
+                    <h1><span>Wikipedia</span>:<br> <a id="enlace"href="${data[3].wikipedia}">${data[3].wikipedia}</a></h1> 
                 `
                 let esto=data[3].flickr_images
                 esto.forEach(element => {
@@ -160,12 +132,12 @@ function fun11(event){
                 
                 })
                 document.getElementById("infocohete").innerHTML=`
-                    <h1>Type: <br>${data[3].type}</h1><br>
-                    <h1>Propellant_1:<br> ${data[3].engines.propellant_1}</h1><br>
-                    <h1>Propellant_1:<br> ${data[3].engines.propellant_2}</h1><br>
-                    <h1>Version:<br> ${data[3].engines.version}</h1><br>
-                    <h1>Layout:<br>${data[3].engines.layout} </h1>
-                    <h1>Number:<br>${data[3].engines.number} </h1>
+                    <h4><span>Type</span><br>${data[3].type}</h4><br>
+                    <h4><span>Propellant1</span><br> ${data[3].engines.propellant_1}</h4><br>
+                    <h4><span>Propellant2</span><br> ${data[3].engines.propellant_2}</h4><br>
+                    <h4><span>Version</span><br> No information</h4><br>
+                    <h4><span>Layout</span><br> No information </h4><br>
+                    <h4><span>Number</span><br>${data[3].engines.number} </h4>
                 `
             
             }

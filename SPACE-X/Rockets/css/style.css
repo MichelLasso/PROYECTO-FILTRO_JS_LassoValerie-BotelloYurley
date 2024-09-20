@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    width: 100vw;
+    height: 40vw;
+    background-color: #13142D;
+}
 @font-face {
     font-family: titulo;
     src: url(/fonts/Warpen.ttf);
@@ -17,7 +22,7 @@
 }
 #container{
     width: 100vw;
-    height: 50vw;
+    height: 45vw;
     background-color: #13142D;
 }
 #titulo{
@@ -29,22 +34,38 @@
     height: 6vw;
     position: absolute;
     top: 1vw;
+    left: 3vw;
   
 }
 #info-D{
+    margin-left: 1vw;
+    padding-top: 1.5vw;
+    border: 2px solid white;
+    border-radius: 2vw;
     font-family: normalLetra;
     color: #fff;
     position: absolute;
     top: 6vw;
     width: 26vw;
-    height: 35vw;
-    box-shadow:0vw 1vw 2vw 1vw#262938,
-    0vw 0.5vw 0.5vw 0.5vw#f7f7f7;
+    height: 30vw;
+    box-shadow: 0 4px 8px 0 rgb(61, 61, 61), 0 6px 20px 0 rgb(150, 150, 150);
+
 }
 h1{
-    margin-left: 1.2vw;
+    margin-left: 2vw;
     margin-top:0.5vw ;
-    font-size: 1.2vw;
+    font-size: 1.05vw;
+  
+}
+h4{
+
+    margin-top:0.5vw ;
+    font-size: 1vw;
+}
+span{
+    font-size: 1vw;
+    font-family: titulo;
+    color: #d82e30;
 }
 #porcentajes-A{
     position: absolute;
@@ -52,7 +73,7 @@ h1{
     top: 6vw;
     width: 53vw;
     height: 8vw;
-    border: 1px solid white;
+
 }
 #imagen{
     position: absolute;
@@ -61,29 +82,34 @@ h1{
     width: 20vw;
     height: 20vw;
     border-radius: 1vw;
-    box-shadow:0vw 1vw 2vw 1vw#262938,
-    0vw 0.5vw 0.5vw 0.5vw#f7f7f7;
+    box-shadow:0vw 1vw 2vw 1vw#313138,
+    0vw 0.5vw 0.5vw 0.5vw#ffffff;
 }
 #Info-I{
+    border: 2px solid white;
+    border-radius: 1.5vw;
     font-family: normalLetra;
     position: absolute;
     top: 6vw;
     left: 79vw;
     width: 20vw;
-    height: 35vw;
-    box-shadow:0vw 1vw 2vw 1vw#262938,
-    0vw 0.5vw 0.5vw 0.5vw#f7f7f7;
+    height: 30vw;
+    box-shadow: 0 4px 8px 0 rgb(61, 61, 61), 0 6px 20px 0 rgb(150, 150, 150);
+
 }
 #infocohete{
     font-family: normalLetra;
     color: #fff;
     display: flex;
     text-align: center;
-    width: 45vw;
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
     height: 4vw;
     position: absolute;
     top: 37vw;
-    left: 33vw;
+    left: 27.6vw;
+
 }
 #barra_AB{
     display: flex;
@@ -103,6 +129,10 @@ h1{
     border-right: solid transparent 50px;
     border-bottom: solid #010220 80px;  
     border-radius: 1vw 1vw 0vw 0vw ;
+    margin-top: -3vw;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
 }
 #linea{
     position: absolute;
@@ -112,7 +142,7 @@ h1{
     border-radius: 1vw 1vw 0vw 0vw ;
 }
 #pasar-Pagina{
-    width: 18vw;
+    width: 20vw;
     height: 3vw;
     position: absolute;
     top: 1vw;
@@ -153,44 +183,35 @@ ul li.active{
     cursor: pointer;
     outline: none;
 }
-#barraazul{
-    display: inline-block;
-
-}
 #image{
-    position: absolute;
-    left: 27vw;
-    top: 1vw;
-    width: 3vw;
-    height: 3vw;
+    position: relative;
+    top: 4.5vw;
+    width: 2.5vw;
+    height: 2.5vw;
 }
 #image1{
-    position: absolute;
-    left:38vw;
-    top: 1.5vw;
+    position: relative;
+    top: 4.5vw;
     width: 3vw;
     height: 3vw;
   
 }
 #image2{
-    position: absolute;
-    left: 48vw;
-    top: 1.5vw;
+    position: relative;
+    top: 4.5vw;
     width: 3vw;
     height: 3vw;
 }
 #image3{
-    position: absolute;
-    left:58vw;
-    top: 1.5vw;
+    position: relative;
+    top: 4.5vw;
     width: 3vw;
     height: 3vw;
   
 }
 #image4{
-    position: absolute;
-    left:68vw;
-    top: 1.5vw;
+    position: relative;
+    top: 4.2vw;
     width: 3vw;
     height: 3vw;
   
@@ -198,11 +219,11 @@ ul li.active{
 #info1{
     color: white;
     font-size: 1.5vw;
-    margin: 0 3vw 2vw;
+    margin: 0 1vw 1vw;
 }
 progress{
    
-    margin: 0 3vw 0vw;
+    margin: 0 2vw 0vw;
     height: 1.5vw;
 }
 
@@ -214,6 +235,9 @@ progress{
 #enlace{
     color: white;
     text-decoration: none;
+    font-family: recorrida;
+
+
 }
 #fotosnaves{
     z-index: 2;

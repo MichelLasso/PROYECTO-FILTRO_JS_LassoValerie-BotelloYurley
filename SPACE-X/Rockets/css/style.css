@@ -62,11 +62,11 @@ h4{
     margin-top:0.5vw ;
     font-size: 1vw;
 }
-span{
+#span{
     font-size: 1vw;
     font-family: titulo;
     color: #d82e30;
-}
+} 
 #more{
     cursor: pointer;
     color: #010220;
@@ -86,11 +86,49 @@ span{
 }
 #porcentajes-A{
     position: absolute;
-    left: 26vw;
+    left: 27vw;
     top: 6vw;
-    width: 53vw;
+    width: 51vw;
     height: 8vw;
-
+    display: flex;
+    justify-content: space-evenly;
+}
+.progressc1{
+    width: 16vw;
+    height: 8vw;
+}
+.block{
+    position: absolute;
+    left:8vw;
+    width: 0.2vw;
+    height: 0.5vw;
+    background-color: #4e4e4e;
+    transform-origin: 0.5vw 4vw;
+    opacity: 0;
+    animation: animate 0.1s linear forwards;
+}
+@keyframes animate {
+    to{
+        opacity: 1;
+    }
+    
+}
+/*
+:root{
+    --variable:0;
+}
+*/
+.block:nth-child(-n+61){
+    background-color: #d82e30;
+    box-shadow: 0 0 0.5vw #d82e30, 0 0 6vw #d82e30;
+}
+h2{
+    position: absolute;
+    top: 2vw;
+    left: 7.5vw;
+    color: white;
+    text-align: center;
+    line-height: 3.5vw; 
 }
 #imagen{
     position: absolute;

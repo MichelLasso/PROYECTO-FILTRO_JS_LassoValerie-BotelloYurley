@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 @font-face {
     font-family: titulo;
     src: url(/fonts/Warpen.ttf);
@@ -18,17 +17,18 @@
     font-family: normalLetra;
     src: url(/fonts/Roboto-Light.ttf);
 }
-
+body{
+    background: #13142D;
+}
 #contenedor{
     width: 100vw;
-    height: 59.05rem;
+    height: 50rem;
     display: grid;
-    flex-wrap: wrap;
-    background: #13142D
+    background: #13142D;
 }
 .tituloHistory{
     width: 100vw;
-    height: 12rem;
+    height: 12.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,12 +37,12 @@
     font-size: 5rem;
     font-family: titulo;
 }
-.datos{
+#datos{
     display: grid;
     height: 30rem;
     gap: 40px;
     grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: minmax(100px,auto);
+    grid-template-rows: repeat(2,auto);
 }
 #name{
     grid-column: 1/3;
@@ -50,10 +50,10 @@
     grid-row: 1/4;
     border: 1px solid white;
     font-family: titulo;
+    box-shadow: 0 4px 8px 0 rgb(61, 61, 61), 0 6px 20px 0 rgb(150, 150, 150);
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    text-align: center;
     border-radius: 10px;
     color: white;
     font-size: 3rem;
@@ -67,6 +67,7 @@
     color: #d82e30;
     padding: 2rem;
     font-family: titulo;
+    box-shadow: 0 4px 8px 0 rgb(61, 61, 61), 0 6px 20px 0 rgb(150, 150, 150);
     font-size: 2rem;
 }
 #txtDetails,#txtEventUtc,#txtEvent{
@@ -86,6 +87,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 8px 0 rgb(61, 61, 61), 0 6px 20px 0 rgb(150, 150, 150);
+
 }
 #event{
     grid-column: 4/4;
@@ -100,13 +103,14 @@
     padding: 2rem;
     font-family: titulo;
     font-size: 2rem;
+    box-shadow: 0 4px 8px 0 rgb(61, 61, 61), 0 6px 20px 0 rgb(150, 150, 150);
 }
 #article{
-    grid-column: 5/6;
+    grid-column: 6/6;
     margin-right: 3rem;
-    grid-row: 3/4;
+    grid-row: 3/3;
     border-radius: 10px;
-    height: 12.5rem;
+    box-shadow: 0 4px 8px 0 rgb(61, 61, 61), 0 6px 20px 0 rgb(150, 150, 150);
     border: 1px solid white;
     display: flex;
     flex-direction: column;
@@ -117,48 +121,51 @@
     font-family: titulo;
     font-size: 2rem;
 }
-#barra_AB {
-    margin-top: 0;
-    flex-direction: column;
-    width: 100vw;
-    height: 4rem;
+.link{
+    color:#d82e30
 }
-#barraazul {
-    width: 66rem;
+.link:hover{
+    color: white;
+}
+#barra_AB{
     display: flex;
-    margin-left: 26rem;
-    justify-content: space-evenly;
-    margin-top: 0;
-    border-top: solid transparent 0px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 44vw;
+    width: 100vw;
+    height: 6vw;
+    overflow: hidden;
+   
+}
+#barraazul{
+    width: 60vw;
+    border-top: solid transparent 0px ;
     border-left: solid transparent 50px;
     border-right: solid transparent 50px;
-    border-bottom: solid #010220 80px;
-    border-radius: 1vw 1vw 0vw 0vw;
+    border-bottom: solid #010220 80px;  
+    border-radius: 1vw 1vw 0vw 0vw ;
+    margin-left: 20vw;
+    margin-top: 4.5vw;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
 }
-#linea {
-    margin-top: 0rem;
-    width: 99vw;
-    background-color: #010220;
-    border-radius: 1vw 1vw 0vw 0vw;
+#linea{
+    position: absolute;
+    top: 47.3vw;
+    width: 100vw;
+    border: 0.5vw solid #010220;
+    border-radius: 1vw 1vw 0vw 0vw ;
 }
-.icon {
-    position: relative;
-    top: 5.6rem;
-    width: 3rem;
-}
-.link{
-    text-decoration: none;
-    color: #d82e30;
-    cursor: pointer;
-}
-
 #pasar-Pagina{
-    width: 18vw;
+    width: 22vw;
     height: 3vw;
-    margin-left: 80vw;
+    position: absolute;
+    top: 42vw;
+    left: 79vw;
     display: flex;
     padding: 4px 20px ;
-   
 }
 ul{
     text-decoration: none;
@@ -172,7 +179,7 @@ ul li{
     font-size: 1.2vw;
     text-align: center;
     line-height: 2vw;
-    margin: 0 0.5vw;
+    margin: 0 0.1vw;
     cursor: pointer;
     border-radius: 50vw;
     color: white;
@@ -191,4 +198,169 @@ ul li.active{
     color: white;
     cursor: pointer;
     outline: none;
+}
+
+#image{
+    position: relative;
+    top: 4.5vw;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+#image1{
+    position: relative;
+    top: 4.5vw;
+    width: 3vw;
+    height: 3vw;
+  
+}
+#image2{
+    position: relative;
+    top: 4.5vw;
+    width: 3vw;
+    height: 3vw;
+}
+#image3{
+    position: relative;
+    top: 4.5vw;
+    width: 3vw;
+    height: 3vw;
+  
+}
+#image4{
+    position: relative;
+    top: 4.2vw;
+    width: 3vw;
+    height: 3vw;
+  
+}
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    
+    #contenedor{
+        height: 60rem;
+    }
+    .tituloHistory{
+        margin-top: 2rem;
+        height: 10rem;
+        font-size: 4rem;
+    }
+    #datos{
+        margin-top: -33vw;
+        height: 30rem;
+        gap: 40px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5,auto);
+    }
+    #name{
+        grid-column: 1/6;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        grid-row: 1/1;
+        font-size: 1.5rem;
+        padding: 2rem;
+        color: #d82e30;
+    }
+    #details{
+        grid-column: 1/6;
+        margin-left: 2.8rem;
+        grid-row: 2/2;
+        border-radius: 10px;
+        padding: 2rem;
+        font-family: titulo;
+        font-size: 1.5rem;
+    }
+    #txtDetails,#txtEventUtc,#txtEvent{
+        font-size: 1rem;
+    }
+    #eventUtc{
+        grid-column: 1/6;
+        margin-left: 3rem;
+        grid-row: 3/3;
+        margin-right: 3rem;
+        font-size: 1.5rem;
+    }
+    #event{
+        grid-column: 1/6;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        grid-row: 4/4;
+    }
+    #article{
+        grid-column: 1/1;
+        margin-left: 3rem;
+        padding: 0;
+        font-size: 1.3rem;
+        background-color: #ffffff;
+    }
+    .link{
+        text-decoration: none;
+    }
+    #article:hover{
+        background-color: rgb(0, 0, 0);
+    }
+    #barra_AB{
+        display: flex;
+        top: 44vw;
+        width: 100vw;
+        height: 9vw;
+    }
+    #barraazul{
+        width: 60vw;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;  
+        border-radius: 1vw 1vw 0vw 0vw ;
+        margin-left: 20vw;
+        margin-top: 4.5vw;
+    }
+    #linea{
+        display: none;
+    }
+    #pasar-Pagina{
+        width: 50vw;
+        height: 3vw;
+        position: absolute;
+        top: 200vw;
+        left: 2vw;
+        display: flex;
+        padding: 4px 20px ;
+    }
+    ul{
+        text-decoration: none;
+    }
+    ul li{
+        display: inline-block;
+        background-color: #010220;
+        width: 2vw;
+        height: 2vw;
+        font-size: 1.2vw;
+        text-align: center;
+        line-height: 2vw;
+        margin: 0 0.1vw;
+        cursor: pointer;
+        border-radius: 50vw;
+        color: white;
+       
+    }
+    ul li.active{
+        color: #fff;
+        background-image: linear-gradient(#ffffff,#030b35);
+        color: black;
+        background-repeat: no-repeat;
+    }
+    .btn1 , .btn2{
+        display: inline-flex;
+        align-items: center;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        outline: none;
+    }
+    
+    #image,#image1,#image2,#image3,#image4{
+        top: 2.5rem;
+        right: 3.5rem;
+        width: 4.5rem;
+        height: 2.3rem;
+    }
 }

@@ -26,6 +26,23 @@ function mostrar(){
             <h4><span  id="span">Layout</span><br>${data[0].engines.layout} </h4>
             <h4><span  id="span">Number</span><br>${data[0].engines.number} </h4>
         `
+        document.getElementById("Info-I").innerHTML=`
+            <p id="info2">Height</p>
+            <progress  value="${data[0].height.meters}" max="118"></progress>
+            <p id="info2">Diameter</p>
+            <progress value="${data[0].diameter.meters}" max="13"></progress>
+            <p id="info2">Mass</p>
+            <progress value="${data[0].mass.kg}" max="1420788"></progress>
+            <p id="info2">Thrust Sea Level</p>
+            <progress value="${data[0].first_stage.thrust_sea_level.lbf}" max="128000"></progress>
+            <p id="info2">Thrust Vacuum</p>
+            <progress value="${data[0].first_stage.thrust_vacuum.lbf}" max="138000"></progress>
+            <p id="info2">Fuel Amount Tons</p>
+            <progress value="${data[0].first_stage.fuel_amount_tons}" max="3300"></progress>
+            <p id="info2">Thrust</p>
+            <progress value="${data[0].second_stage.thrust.kN}" max="1957"></progress>
+        `
+      
     })
 }
 mostrar()
@@ -47,12 +64,6 @@ function fun11(event){
             valor=event.target.value;
             if(valor==1){
                 mostrar()
-                /*
-                const progress=document.querySelector('progress')
-                let Value=progress.value;
-                Value=80;
-                console.log(Value)
-                */
             }
             if(valor==2){
                 console.log(data[1].name)
@@ -81,6 +92,22 @@ function fun11(event){
                     <h4><span  id="span">Version</span><br> ${data[1].engines.version}</h4><br>
                     <h4><span  id="span">Layout</span><br>${data[1].engines.layout} </h4>
                     <h4><span  id="span">Number</span><br>${data[1].engines.number} </h4>
+                `
+                document.getElementById("Info-I").innerHTML=`
+                    <p id="info2">Height</p>
+                    <progress  value="${data[1].height.meters}" max="118"></progress>
+                    <p id="info2">Diameter</p>
+                    <progress value="${data[1].diameter.meters}" max="13"></progress>
+                    <p id="info2">Mass</p>
+                    <progress value="${data[1].mass.kg}" max="1420788"></progress>
+                    <p id="info2">Thrust Sea Level</p>
+                    <progress value="${data[1].first_stage.thrust_sea_level.lbf}" max="128000"></progress>
+                    <p id="info2">Thrust Vacuum</p>
+                    <progress value="${data[1].first_stage.thrust_vacuum.lbf}" max="138000"></progress>
+                    <p id="info2">Fuel Amount Tons</p>
+                    <progress value="${data[1].first_stage.fuel_amount_tons}" max="3300"></progress>
+                    <p id="info2">Thrust</p>
+                    <progress value="${data[1].second_stage.thrust.kN}" max="1957"></progress>
                 `
             }
             if(valor==3){
@@ -111,6 +138,22 @@ function fun11(event){
                     <h4><span id="span">Layout</span><br>${data[2].engines.layout} </h4>
                     <h4><span id="span">Number</span><br>${data[2].engines.number} </h4>
                 `
+                document.getElementById("Info-I").innerHTML=`
+                    <p id="info2">Height</p>
+                    <progress  value="${data[2].height.meters}" max="118"></progress>
+                    <p id="info2">Diameter</p>
+                    <progress value="${data[2].diameter.meters}" max="13"></progress>
+                    <p id="info2">Mass</p>
+                    <progress value="${data[2].mass.kg}" max="1420788"></progress>
+                    <p id="info2">Thrust Sea Level</p>
+                    <progress value="${data[2].first_stage.thrust_sea_level.lbf}" max="128000"></progress>
+                    <p id="info2">Thrust Vacuum</p>
+                    <progress value="${data[2].first_stage.thrust_vacuum.lbf}" max="138000"></progress>
+                    <p id="info2">Fuel Amount Tons</p>
+                    <progress value="${data[2].first_stage.fuel_amount_tons}" max="3300"></progress>
+                    <p id="info2">Thrust</p>
+                    <progress value="${data[2].second_stage.thrust.kN}" max="1957"></progress>
+                `
             }
             if(valor==4){
                 console.log(data[3].name)
@@ -140,6 +183,42 @@ function fun11(event){
                     <h4><span id="span">Layout</span><br> No information </h4><br>
                     <h4><span id="span">Number</span><br>${data[3].engines.number} </h4>
                 `
+                document.getElementById("Info-I").innerHTML=`
+                    <p id="info2">Height</p>
+                    <progress  value="${data[3].height.meters}" max="118"></progress>
+                    <p id="info2">Diameter</p>
+                    <progress value="${data[3].diameter.meters}" max="13"></progress>
+                    <p id="info2">Mass</p>
+                    <progress value="${data[3].mass.kg}" max="1420788"></progress>
+                    <p id="info2">Thrust Sea Level</p>
+                    <progress value="${data[3].first_stage.thrust_sea_level.lbf}" max="128000"></progress>
+                    <p id="info2">Thrust Vacuum</p>
+                    <progress value="${data[3].first_stage.thrust_vacuum.lbf}" max="138000"></progress>
+                    <p id="info2">Fuel Amount Tons</p>
+                    <progress value="${data[3].first_stage.fuel_amount_tons}" max="3300"></progress>
+                    <p id="info2">Thrust</p>
+                    <progress value="${data[3].second_stage.thrust.kN}" max="1957"></progress>
+                `
+                const progressc11=document.getElementsByClassName('progressc1')[0];
+                const blocked=document.getElementsByClassName('block');
+
+                for(var i = 1; i < 100; i ++){
+                    progressc11.innerHTML+=`<div class="block"></div>`
+                    blocked[i].style.transform="rotate("+3.6 * i +"deg)"
+                    blocked[i].style.animationDelay=`${i/45}s`;
+
+                }
+                const circulo=document.querySelector('.circulo')
+                let target = +circulo.getAttribute('data-target');
+                target=data[3].second_stage.thrust.kN;
+                for (let a = 0; a < target; a++) {
+                    blocked[a].classList.add('target')
+                    
+                }
+                console.log(circulo);
+                console.log(target);
+                console.log(blocked);
+
             
             }
         }
@@ -147,17 +226,45 @@ function fun11(event){
     })
  
 }
-
-const progressc11=document.getElementsByClassName('progressc1')[0];
-const blocked=document.getElementsByClassName('block');
-
-for(var i = 1; i < 100; i ++){
-    progressc11.innerHTML+=`<div class="block"></div>`
-    blocked[i].style.transform="rotate("+3.6 * i +"deg)"
-    blocked[i].style.animationDelay=`${i/45}s`;
-
+function progreess(){
+    fetch("https://api.spacexdata.com/v4/rockets")
+    .then(res=>res.json())
+    .then(data=>{
+        let progressc11=document.getElementsByClassName('progressc1')[0];
+        let blocked=document.getElementsByClassName('block');
+    
+        for(var i = 1; i < 100; i ++){
+            progressc11.innerHTML+=`<div class="block"></div>`
+            blocked[i].style.transform="rotate("+3.6 * i +"deg)"
+            blocked[i].style.animationDelay=`${i/45}s`;
+    
+        }
+        const circulo=document.querySelector('.circulo')
+        let target = +circulo.getAttribute('data-target');
+        target=data[0].second_stage.payloads.composite_fairing.height.meters;
+        for (let a = 0; a < target; a++) {
+            blocked[a].classList.add('target')
+            
+        }
+        
+        
+        
+        
+        
+       
+    
+    })
+   
 }
+
+
+progreess()
+
+
+
+
 /*
+const circulo=document.querySelector('.circulo')
 const target = +circulo.getAttribute('data-target');
 var elements = document.querySelectorAll("p:nth-child(-n)")
 elements = +target
@@ -165,7 +272,7 @@ document.documentElement.style.setProperty("--variable",elements)
 console.log(target)
 console.log(elements)
 const estilos=getComputedStyle(document.documentElement)
-const valor=estilos.getPropertyValue("--variable")
+const valor=estilos.getPropertyValue('--variable')
 console.log(valor)
 */
 

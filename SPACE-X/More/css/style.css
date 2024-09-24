@@ -29,18 +29,20 @@ body{
 #titulo{
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
     color: #d82e30;
-    font-size: 5vw;
-    padding: 2vw;
+    font-size: 6rem;
+    height: 13rem;
     font-family: titulo;
 
 }
 #text{
     padding: 2vw;
     margin-left: 4vw;
-    width: 50vw;
-    height: 30vw;
+    width: 52vw;
+    text-align: center;
+    height: 27vw;
     color: white;
     font-size: 2vw;
     font-family: normalLetra;
@@ -49,41 +51,26 @@ body{
     width: 40vw;
     height: 5vw;
     margin-top: 2vw;
-    margin-left: 6vw;
+    margin-left: 10vw;
     display: flex;
     justify-content: space-between;
 }
 #imgnave{
-    width: 32vw;
-    height: 30vw;
+    width: 35vw;
     position: absolute;
-    top: 8.8vw;
+    top: 6.5vw;
     left: 60vw;
 }
 #imgnave img{
     position: absolute;
-    top: -6vw;
+    width: 32rem;
 }
-#instagram{
-    border-radius: 1.1vw;
-    background-color: white;
-    width: 5vw;
-    height:5vw ;
+#icon{
+    width: 3rem;
 }
-#x{
-    border-radius: 1.1vw;
-    width: 5vw;
-    height:5vw ;
-}
-#facebook{
-    border-radius: 1vw;
-    width: 5vw;
-    height:5vw ;
-}
-#youtube{
-    border-radius: 1.1vw;
-    width: 6vw;
-    height:5vw;
+#iconY{
+    width: 3vw;
+    margin-top: 0.3rem;
 }
 #volver {
     position: absolute;
@@ -96,4 +83,60 @@ body{
     width: 3vw;
     height: 2vw;
     transform: rotate(180deg);
+}
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    
+    #container{
+        width: 100vw;
+        height: auto;
+        background-color:#13142D;
+    }
+    #titulo{
+        font-size: 4rem;
+        height: 10rem;
+    }
+    #text{
+        padding-left: 5vw;
+        padding-right: 5vw;
+        margin-left: 0vw;
+        margin-top: 60vw;
+        width: 100vw;
+        height: auto;
+        font-size: 4vw;
+    }
+    #redes{
+        width: 100vw;
+        height: 5vw;
+        margin-top: 4vw;
+        margin-left: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    #imgnave{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 25vw;
+        left: 0vw;
+    }
+    #imgnave img{
+        position: absolute;
+        width: 13rem;
+    }
+    #icon{
+        width: 2rem;
+    }
+    #iconY{
+        width: 7vw;
+        height: 6vw;
+    }
+    #volver {
+        position: absolute;
+    }
+    #img{
+        width: 10vw;
+        height: 10vw;
+        transform: rotate(180deg);
+    }
 }

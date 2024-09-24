@@ -24,7 +24,6 @@ body{
     width: 100vw;
     height: 50rem;
     display: grid;
-    background: #13142D;
 }
 .tituloHistory{
     width: 100vw;
@@ -34,7 +33,7 @@ body{
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 5rem;
+    font-size: 6rem;
     font-family: titulo;
 }
 #datos{
@@ -233,7 +232,9 @@ ul li.active{
     height: 3vw;
   
 }
-
+span{
+    color: #d82e30;
+}
 @media only screen and (min-width : 320px) and (max-width : 480px) {
     
     #contenedor{

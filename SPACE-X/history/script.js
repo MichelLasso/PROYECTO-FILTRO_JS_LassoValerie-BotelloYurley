@@ -12,7 +12,7 @@ function mostrar(){//mostrar  información al inicio de la pAgina
         
         document.getElementById("datos").innerHTML =`
             <div id="name">${historyDatos[0].title}</div>
-            <div id="details">Details <div id="txtDetails">${historyDatos[0].details}</div></div>
+            <div id="details"><p id="namedetails"> Details</p> <div id="txtDetails">${historyDatos[0].details}</div></div>
             <div id="eventUtc">Event UTC <div id="txtEventUtc">${dateArreglada}</div></div>
             <div id="event">Event <div id="txtEvent">${historyDatos[0].event_date_unix}</div></div>
             <a href="${historyDatos[0].links.article}" class="links"><div id="article">Article</div></a>

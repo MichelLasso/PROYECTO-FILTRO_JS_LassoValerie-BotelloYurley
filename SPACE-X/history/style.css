@@ -163,7 +163,7 @@ body{
     margin-top: -4vw;
     margin-left: 80vw;
     display: flex;
-    padding: 4px 20px ;
+    padding: 2px 20px ;
 }
 ul{
     text-decoration: none;
@@ -189,7 +189,7 @@ ul li.active{
     color: black;
     background-repeat: no-repeat;
 }
-.btn1 , .btn2{
+.btn1,.btn2{
     display: inline-flex;
     align-items: center;
     background: transparent;
@@ -247,8 +247,9 @@ span{
     .tituloHistory{
         padding-bottom: 0;
         margin-top: -9rem;
+        margin-left: 4.8vw;
         height: 10rem;
-        font-size: 4rem;
+        font-size: 3.8rem;
     }
     #datos{
         margin-top: -33vw;
@@ -267,8 +268,8 @@ span{
         color: #d82e30;
     }
     #spacex{
-        font-size: 3vw;
-        padding: 1vw;
+        font-size: 2vw;
+        padding-left: 7vw;
         font-family: titulo;
         color: #fff;
     }
@@ -340,11 +341,10 @@ span{
     #pasar-Pagina{
         width: 90vw;
         height: 9vw;
-        position: absolute;
-        top: 200vw;
-        left: -60vw;
+        margin-top:-20vw;
+        margin-left: 20vw;
         display: flex;
-        padding: 5px 20px ;
+        padding: 5px 10px ;
     }
     ul{
         text-decoration: none;
@@ -360,7 +360,8 @@ span{
         align-items: center;
         height: 9vw;
         font-size: 3vw;
-       border: 1px solid white;
+        margin: 1vw;
+        border: 1px solid white;
     }
     ul li.active{
         color: #fff;
@@ -368,8 +369,8 @@ span{
         color: black;
         background-repeat: no-repeat;
     }
-    .btn1 , .btn2{
-        width: 1vw;
+    .btn1,.btn2{
+        width: 2vw;
         height: 9vw;
         display: inline-flex;
         align-items: center;
@@ -380,9 +381,8 @@ span{
     }
     
     #image,#image1,#image2,#image3,#image4{
-        top: 3rem;
-        left: 5vw;
-        right: 3.5rem;
+        top: 8rem;
+        left: 8vw;
         width: 9vw;
         height: 9vw;
     }

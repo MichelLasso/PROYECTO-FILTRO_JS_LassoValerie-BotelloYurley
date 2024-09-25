@@ -397,13 +397,14 @@ ul li.active{
     }
     ul li{
         display: inline-block;
+        border: 1px solid white;
         background-color: #010220;
         width: 7vw;
         height: 7vw;
         font-size: 3.5vw;
         text-align: center;
-        line-height: 8vw;
-        margin: 0 0.5vw;
+        line-height: 7vw;
+        margin: 0 1.2vw;
         cursor: pointer;
         border-radius: 50vw;
         color: white;

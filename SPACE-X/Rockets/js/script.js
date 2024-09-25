@@ -1,6 +1,4 @@
-
-
-function mostrar(){
+function mostrar(){ //mostrar datos al principio de la página.
     fetch("https://api.spacexdata.com/v4/rockets")
     .then(res=>res.json())
     .then(data=>{
@@ -48,23 +46,23 @@ function mostrar(){
 }
 mostrar()
 
-document.getElementById("pasar-Pagina").addEventListener("click", fun11)
-function fun11(event){
+document.getElementById("pasar-Pagina").addEventListener("click", fun11)//se llama la id y se le agrega el evento de click
+function fun11(event){//creamos la anterior función y agregamos un parametros que nos permitira conectar con la funcion active link
     fetch("https://api.spacexdata.com/v4/rockets")
     .then(res=>res.json())
     .then(data=>{
         var link= document.getElementsByClassName("link");
         let valor=1;
         
-        activelink(event)
+        activelink(event)//definimos la funcion
         function activelink(event){
-            for( let i of link){
-                i.classList.remove("active");
+            for( let i of link){//recorremos las clases link 
+                i.classList.remove("active");//esto eliminara el active de la clase que ante fue clickeada
             }
-            event.target.classList.add("active");
-            valor=event.target.value;
-            let x=valor-1
-            function bar_progress(){
+            event.target.classList.add("active");//y aqui le agregara el active a la que se clikeo recientemente
+            valor=event.target.value;//obtener el value de los botones
+            let x=valor-1 //a ese value le restamos 1 para obtener las posiciones dependiendo del boton clickeado
+            function bar_progress(){//creamos una nueva funcion donde recorreremos la info de la pregress bar circulares dependiendo cada posicion seh¿gun el boton
                 fetch("https://api.spacexdata.com/v4/rockets")
                 .then(res=>res.json())
                 .then(data=>{
@@ -126,7 +124,7 @@ function fun11(event){
                     
                 })
               
-            }
+            }//deppendiendo cada boton clickeado se mostrara la info correspondiente.
             if(valor==1){
                 mostrar()
                 bar_progress()
@@ -277,6 +275,7 @@ function fun11(event){
     })
  
 }
+//esta funcion se utiliza para mostrar las progress circulares al inicio.
 function progress1(){
     fetch("https://api.spacexdata.com/v4/rockets")
     .then(res=>res.json())

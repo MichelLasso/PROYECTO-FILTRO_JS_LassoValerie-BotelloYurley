@@ -324,12 +324,14 @@ span{
         height: 9vw;
     }
     #barraazul{
-        width: 60vw;
+        width: 90vw;
         border-left: 0;
         border-right: 0;
         border-bottom: 0;  
         border-radius: 1vw 1vw 0vw 0vw ;
-        margin-left: 20vw;
+        margin-left: 0vw;
+        display: flex;
+        justify-content: space-around;
         margin-top: 4.5vw;
     }
     #linea{
@@ -379,9 +381,10 @@ span{
     }
     
     #image,#image1,#image2,#image3,#image4{
-        top: 2.5rem;
+        top: 3rem;
+        left: 5vw;
         right: 3.5rem;
-        width: 4.5rem;
-        height: 2.3rem;
+        width: 9vw;
+        height: 9vw;
     }
 }

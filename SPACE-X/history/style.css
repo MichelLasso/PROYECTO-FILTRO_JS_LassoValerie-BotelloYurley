@@ -57,7 +57,7 @@ body{
     text-align: center;
     border-radius: 10px;
     color: white;
-    font-size: 3rem;
+    font-size: 2.5vw;
 }
 #details{
     grid-column: 3/6;
@@ -69,7 +69,7 @@ body{
     padding: 2rem;
     font-family: titulo;
     box-shadow: 0 4px 8px 0 rgb(61, 61, 61), 0 6px 20px 0 rgb(150, 150, 150);
-    font-size: 2rem;
+    font-size: 1.5vw;
 }
 #txtDetails,#txtEventUtc,#txtEvent{
     font-family: normalLetra;
@@ -83,7 +83,7 @@ body{
     color: #d82e30;
     padding: 2rem;
     font-family: titulo;
-    font-size: 2rem;
+    font-size: 1.7vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,9 +101,9 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 1vw;
     font-family: titulo;
-    font-size: 2rem;
+    font-size: 1.8vw;
     box-shadow: 0 4px 8px 0 rgb(61, 61, 61), 0 6px 20px 0 rgb(150, 150, 150);
 }
 #article{
@@ -118,7 +118,7 @@ body{
     justify-content: center;
     align-items: center;
     color: #d82e30;
-    padding: 2rem;
+    padding: 1rem;
     font-family: titulo;
     font-size: 2rem;
 }
@@ -154,7 +154,7 @@ body{
 }
 #linea{
     position: absolute;
-    top: 47.3vw;
+    top: 63vw;
     width: 100vw;
     border: 0.5vw solid #010220;
     border-radius: 1vw 1vw 0vw 0vw ;
@@ -163,8 +163,8 @@ body{
     width: 22vw;
     height: 3vw;
     position: absolute;
-    top: 44vw;
-    left: 82vw;
+    top: 58vw;
+    left: 80vw;
     display: flex;
     padding: 4px 20px ;
 }

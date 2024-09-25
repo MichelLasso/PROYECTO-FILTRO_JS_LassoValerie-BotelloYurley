@@ -1,4 +1,4 @@
-function mostrar(){
+function mostrar(){//funcion que me permite mostrar al inicio todos los datos de primer boton
     fetch("https://api.spacexdata.com/v4/capsules")
     .then(res=>res.json())
     .then(daticos=>{
@@ -33,695 +33,171 @@ function mostrar(){
         
         })
 }
-mostrar()
-document.getElementById("pasar-Pagina").addEventListener("click", fun11)
-function fun11(event){
+mostrar()         
+document.getElementById("pasar-Pagina").addEventListener("click", fun11)//creamos el evento click para la id "pasar-Pagina"
+function fun11(event){//definimos en la funcion un arametro que conectaremos con la funcion dentro de ella para conectarlas
         fetch("https://api.spacexdata.com/v4/capsules")
         .then(res=>res.json())
         .then(daticos=>{
           
-                var link= document.getElementsByClassName("link");
+                var link= document.getElementsByClassName("link");//obtenemos la clase link y la almacenamos en una variable
                 let valor=1;
-                activelink(event)
-                function activelink(event){
-                        for( let i of link){
-                                i.classList.remove("active");
+                activelink(event) //definimos nuestra funcion
+                function activelink(event){// la declaramos 
+                        for( let i of link){ //realizamos un for para recorrer a variable link
+                                i.classList.remove("active"); // la clase que contega junto a la clase link active se le eliminara
                         }
-                        event.target.classList.add("active");
-                        valor=event.target.value;
+                        event.target.classList.add("active");//luego llamando nuestro anterior parametro para que nos retorne "active" al boton clickeado
+                        valor=event.target.value;//esto nos permite obtener el value de cada boton
+                        let x=valor-1//definimos una variable en este caso "x", y al valor del boton le restamos 1
+                        function reducir(){//con lo anterior creamos una nueva funcion que tendra el contenido de la api a utilizar para asi acceder a cada uno segun el boton que da click y reducir código
+                                document.getElementById("tittle").innerHTML=`
+                                        <h1 id="titu">${daticos[x].type}</h1>
+                                `
+                                document.getElementById("text").innerHTML=`
+                                        <h1 id="textico">${daticos[x].last_update}</h1>
+                                `
+                                document.getElementById("idecita").innerHTML=`
+                                        <h1 id="idd">${daticos[x].id}</h1>
+                                `
+                                document.getElementById("star1").innerHTML=`
+                                        <h1>${daticos[x].land_landings}</h1>
+                                `
+                                document.getElementById("star2").innerHTML=`
+                                        <h1>${daticos[x].reuse_count}</h1>
+                                `
+                                document.getElementById("star3").innerHTML=`
+                                        <h1 >${daticos[x].water_landings}</h1>
+                                `
+                                document.getElementById("star4").innerHTML=`
+                                        <h1>${daticos[x].serial}</h1>
+                                `
+                                document.getElementById("star5").innerHTML=`
+                                        <h1>${daticos[x].status}</h1>
+                                `
+                                document.getElementById("lauchess").innerHTML=`
+                                        <h1 id="launchess">${daticos[x].launches[0]}</h1>
+                                `
+                        }
                         if(valor==1){
-                                mostrar()
+                                reducir()//función anterior 
                         }
                         if(valor==2){
-                                document.getElementById("tittle").innerHTML=`
-                                        <h1 id="titu">${daticos[1].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[1].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[1].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[1].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[1].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[1].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[1].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[1].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[1].launches}</h1>
-                                `
-                               
+                                reducir()
                         }
                         if(valor==3){
-                                document.getElementById("tittle").innerHTML=`
-                                        <h1 id="titu">${daticos[2].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[2].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[2].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[2].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[2].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[2].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[2].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[2].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[2].launches}</h1>
-                                `
-                               
+                                reducir()
                         }
                         if(valor==4){
-                                document.getElementById("tittle").innerHTML=`
-                                        <h1 id="titu">${daticos[3].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[3].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[3].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[3].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[3].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[3].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[3].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[3].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[3].launches}</h1>
-                                `
-                               
+                                reducir()
                         }
                         if(valor==5){
-                                document.getElementById("tittle").innerHTML=`
-                                        <h1 id="titu">${daticos[4].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[4].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[4].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[4].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[4].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[4].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[4].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[4].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[4].launches}</h1>
-                                `
-                               
+                               reducir()
                         }
                         if(valor==6){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[5].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[5].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[5].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[5].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[5].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[5].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[5].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[5].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[5].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==7){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[6].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[6].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[6].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[6].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[6].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[6].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[6].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[6].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[6].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==8){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[7].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[7].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[7].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[7].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[7].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[7].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[7].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[7].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[7].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==9){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[8].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[8].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[8].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[8].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[8].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[8].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[8].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[8].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[8].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==10){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[9].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[9].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[9].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[9].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[9].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[9].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[9].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[9].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[9].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==11){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[10].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[10].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[10].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[10].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[10].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[10].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[10].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[10].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[10].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==12){
-                                document.getElementById("tittle").innerHTML=`
-                                        <h1 id="titu">${daticos[11].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[11].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[11].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[11].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[11].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[11].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[11].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[11].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[11].launches[0]}</h1>
-                                `
-                               
+                                reducir()   
                         }
                         if(valor==13){
-                                document.getElementById("tittle").innerHTML=`
-                                        <h1 id="titu">${daticos[12].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[12].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[12].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[12].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[12].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[12].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[12].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[12].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[12].launches[0]}</h1>
-                                `
-                               
+                                reducir()   
                         }
                         if(valor==14){
-                                document.getElementById("tittle").innerHTML=`
-                                        <h1 id="titu">${daticos[13].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[13].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[13].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[13].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[13].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[13].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[13].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[13].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[13].launches[0]}</h1>
-                                `
-                               
+                                reducir()    
                         }
                         if(valor==15){
-                                document.getElementById("tittle").innerHTML=`
-                                        <h1 id="titu">${daticos[14].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[14].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[14].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[14].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[14].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[14].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[14].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[14].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[14].launches[0]}</h1>
-                                `
-                               
+                                reducir()
                         }
                         if(valor==16){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[15].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[15].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[15].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[15].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[15].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[15].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[15].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[15].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[15].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==17){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[16].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[16].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[16].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[16].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[16].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[16].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[16].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[16].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[16].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==18){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[17].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[17].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[17].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[17].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[17].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[17].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[17].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[17].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[17].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==19){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[18].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[18].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[18].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[18].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[18].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[18].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[18].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[18].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[18].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==20){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[19].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[19].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[19].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[19].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[19].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[19].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[19].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[19].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[19].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==21){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[20].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[20].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[20].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[20].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[20].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[20].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[20].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[20].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[20].launches[0]}</h1>
-                                `
+                                reducir()
                         }
                         if(valor==22){
-                                document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[21].type}</h1>
-                                `
-                                document.getElementById("text").innerHTML=`
-                                        <h1 id="textico">${daticos[21].last_update}</h1>
-                                `
-                                document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[21].id}</h1>
-                                `
-                                document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[21].land_landings}</h1>
-                                `
-                                document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[21].reuse_count}</h1>
-                                `
-                                document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[21].water_landings}</h1>
-                                `
-                                document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[21].serial}</h1>
-                                `
-                                document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[21].status}</h1>
-                                `
-                                document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[21].launches[0]}</h1>
-                                `
+                                reducir()
                         }
-                        if(valor==23){
+                        if(valor==23){ // en los 3 ultimos casos obtamos por poner la información de una aqui ya que alguno espacios no tienen información entonces para poder modiificar.
                                 document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[7].type}</h1>
+                                        <h1 id="titu">${daticos[x].type}</h1>
                                 `
                                 document.getElementById("text").innerHTML=`
                                         <h1 id="textico">Not information</h1>
                                 `
                                 document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[22].id}</h1>
+                                        <h1 id="idd">${daticos[x].id}</h1>
                                 `
                                 document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[22].land_landings}</h1>
+                                        <h1>${daticos[x].land_landings}</h1>
                                 `
                                 document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[22].reuse_count}</h1>
+                                        <h1>${daticos[x].reuse_count}</h1>
                                 `
                                 document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[22].water_landings}</h1>
+                                        <h1 >${daticos[x].water_landings}</h1>
                                 `
                                 document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[22].serial}</h1>
+                                        <h1>${daticos[x].serial}</h1>
                                 `
                                 document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[22].status}</h1>
+                                        <h1>${daticos[x].status}</h1>
                                 `
                                 document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[22].launches[0]}</h1>
+                                        <h1 id="launchess">${daticos[x].launches[0]}</h1>
                                 `
                         }
                         if(valor==24){
                                 document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[23].type}</h1>
+                                        <h1 id="titu">${daticos[x].type}</h1>
                                 `
                                 document.getElementById("text").innerHTML=`
                                         <h1 id="textico">Not information</h1>
                                 `
                                 document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[23].id}</h1>
+                                        <h1 id="idd">${daticos[x].id}</h1>
                                 `
                                 document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[23].land_landings}</h1>
+                                        <h1>${daticos[x].land_landings}</h1>
                                 `
                                 document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[23].reuse_count}</h1>
+                                        <h1>${daticos[x].reuse_count}</h1>
                                 `
                                 document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[23].water_landings}</h1>
+                                        <h1 >${daticos[x].water_landings}</h1>
                                 `
                                 document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[23].serial}</h1>
+                                        <h1>${daticos[x].serial}</h1>
                                 `
                                 document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[23].status}</h1>
+                                        <h1>${daticos[x].status}</h1>
                                 `
                                 document.getElementById("lauchess").innerHTML=`
                                         <h1 id="launchess">Not information</h1>
@@ -729,31 +205,31 @@ function fun11(event){
                         }
                         if(valor==25){
                                 document.getElementById("tittle").innerHTML=`
-                                <h1 id="titu">${daticos[24].type}</h1>
+                                        <h1 id="titu">${daticos[x].type}</h1>
                                 `
                                 document.getElementById("text").innerHTML=`
                                         <h1 id="textico">Not information</h1>
                                 `
                                 document.getElementById("idecita").innerHTML=`
-                                        <h1 id="idd">${daticos[24].id}</h1>
+                                        <h1 id="idd">${daticos[x].id}</h1>
                                 `
                                 document.getElementById("star1").innerHTML=`
-                                        <h1>${daticos[24].land_landings}</h1>
+                                        <h1>${daticos[x].land_landings}</h1>
                                 `
                                 document.getElementById("star2").innerHTML=`
-                                        <h1>${daticos[24].reuse_count}</h1>
+                                        <h1>${daticos[x].reuse_count}</h1>
                                 `
                                 document.getElementById("star3").innerHTML=`
-                                        <h1 >${daticos[24].water_landings}</h1>
+                                        <h1 >${daticos[x].water_landings}</h1>
                                 `
                                 document.getElementById("star4").innerHTML=`
-                                        <h1>${daticos[24].serial}</h1>
+                                        <h1>${daticos[x].serial}</h1>
                                 `
                                 document.getElementById("star5").innerHTML=`
-                                        <h1>${daticos[24].status}</h1>
+                                        <h1>${daticos[x].status}</h1>
                                 `
                                 document.getElementById("lauchess").innerHTML=`
-                                        <h1 id="launchess">${daticos[24].launches[0]}</h1>
+                                        <h1 id="launchess">${daticos[x].launches[0]}</h1>
                                 `
                         }
 
@@ -762,19 +238,19 @@ function fun11(event){
         })
 }
 
-
+//función para crear el avances en los botones a lo sigientes.
 function presionar1(){
          
-        let dos=document.getElementById("dos");
-        dos.addEventListener("click",masbotones)
-        function masbotones(){
-                let botonesP=document.getElementById("botones1-5");
+        let dos=document.getElementById("dos");//llamamos el boton a utilizar y lo almacenamos en una varible.
+        dos.addEventListener("click",masbotones)//utilizamos la variable anterio para agregarle el evento click
+        function masbotones(){//utilizamos una nueva funcion
+                let botonesP=document.getElementById("botones1-5");//llamammos los botones del primer recuadro y le aplicamos display none
                 botonesP.style.display="none"
                 let botonesbtn1=document.getElementById("uno");
                 botonesbtn1.style.display="none" 
                 let botonesbt2=document.getElementById("dos");
                 botonesbt2.style.display="none" 
-                let botonesS=document.getElementById("botones6-10");
+                let botonesS=document.getElementById("botones6-10");//luego a los que queremos llamar un displey flex para mostrar y asi sucesivamente con cada uno
                 botonesS.style.display="flex" 
                 let botonesbtn12=document.getElementById("unos");
                 botonesbtn12.style.display="flex" 
@@ -835,20 +311,21 @@ function presionar1(){
       
         
 }
-presionar1()
+presionar1()//llamamos la función
 
+//función para el retroceso de los botones.
 function presionar2(){
          
-        let uno=document.getElementById("uno");
-        uno.addEventListener("click",masbotones)
-        function masbotones(){
-                let botonesP=document.getElementById("botones1-5");
+        let uno=document.getElementById("uno");//llamamos el boton a utilizar y lo almacenamos en una varible.
+        uno.addEventListener("click",masbotones)//utilizamos la variable anterio para agregarle el evento click
+        function masbotones(){ //utilizamos una nueva funcion
+                let botonesP=document.getElementById("botones1-5");//llamammos los botones del primer recuadro y le aplicamos display none
                 botonesP.style.display="none"
                 let botonesbtn1=document.getElementById("uno");
                 botonesbtn1.style.display="none" 
                 let botonesbt2=document.getElementById("dos");
                 botonesbt2.style.display="none" 
-                let botonesS=document.getElementById("botones20-25");
+                let botonesS=document.getElementById("botones20-25");//luego a los que queremos llamar un displey flex para mostrar y asi sucesivamente con cada uno
                 botonesS.style.display="flex" 
                 let botonesbtn12=document.getElementById("unos12");
                 botonesbtn12.style.display="flex" 
@@ -926,4 +403,4 @@ function presionar2(){
       
         
 }
-presionar2()
+presionar2()//llamamos la función

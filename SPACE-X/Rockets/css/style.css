@@ -65,24 +65,29 @@ h4{
 #span{
     font-size: 1vw;
     font-family: titulo;
-    color: #d82e30;
+    color:  #d82e30;
 } 
+#span1{
+    font-size: 1vw;
+    font-family: titulo;
+    color: #d82e30;
+}
 #more{
-    cursor: pointer;
+   
     color: #010220;
     position: absolute;
     top: 43vw;
-    left: 3vw;
+    left:3vw;
     font-family: titulo;
     width: 8vw;
     height: 4vw;
     background-color: white;
     border-radius: 1vw;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-top: 1.5vw;
+    padding: 1vw;
+    cursor: pointer;
     text-decoration: none;
+    font-size: 1.5vw;
+   
 }
 
 #porcentajes-A1{
@@ -115,19 +120,23 @@ h4{
         box-shadow:none;
     }
     100%{
-        background-color: #d82e30;
-        box-shadow: 0 0 0.5vw #d82e30, 0 0 6vw #d82e30;
+        background-color: #eee126;
+        box-shadow: 0 0 0.5vw #eee126, 0 0 6vw #eee126;
     }
     
 }
+
 #h21{
+    width: 10vw;
+    height: 8vw;
     position: absolute;
     top: 2vw;
-    left: 3.5vw;
+    left: -0.1vw;
     color: white;
     text-align: center;
     line-height: 3.5vw; 
     font-size: 1vw;
+    z-index: 2;
 }
 #h22{
     position: absolute;
@@ -139,6 +148,7 @@ h4{
     font-size: 1vw;
 }
 #h222{
+   
     position: absolute;
     top: 8vw;
     left: 67.5vw;
@@ -213,8 +223,8 @@ h4{
         box-shadow:none;
     }
     100%{
-        background-color: #d82e30;
-        box-shadow: 0 0 0.5vw #d82e30, 0 0 6vw #d82e30;
+        background-color: #2ed845;
+        box-shadow: 0 0 0.5vw #2ed845, 0 0 6vw #2ed845;
     }
     
 }
@@ -367,8 +377,7 @@ ul li.active{
     margin: 0 1vw 1vw;
 }
 progress{
-
-    accent-color: #d82e30;
+    accent-color: #24a1e9;
     margin: 0 1vw 0vw;
     height: 1.5vw;
 }
@@ -383,14 +392,8 @@ progress{
     color: white;
     text-decoration: none;
     font-family: recorrida;
-
-
 }
 #fotosnaves{
-    scroll-behavior: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
     z-index: 2;
     width: 20vw;
     height: 20vw;

@@ -19,12 +19,12 @@ function mostrar(){
             <img id="fotosnaves" src="/SPACE-X/img/falcon1.webp" alt="">
         `
         document.getElementById("infocohete").innerHTML=`
-            <h4><span  id="span">Type</span> <br>${data[0].type}</h4><br>
-            <h4><span  id="span">Propellant1</span><br> ${data[0].engines.propellant_1}</h4><br>
-            <h4><span  id="span">Propellant2</span><br> ${data[0].engines.propellant_2}</h4><br>
-            <h4><span  id="span">Version</span><br> ${data[0].engines.version}</h4><br>
-            <h4><span  id="span">Layout</span><br>${data[0].engines.layout} </h4>
-            <h4><span  id="span">Number</span><br>${data[0].engines.number} </h4>
+            <h4><span  id="span1">Type</span> <br>${data[0].type}</h4><br>
+            <h4><span  id="span1">Propellant1</span><br> ${data[0].engines.propellant_1}</h4><br>
+            <h4><span  id="span1">Propellant2</span><br> ${data[0].engines.propellant_2}</h4><br>
+            <h4><span  id="span1">Version</span><br> ${data[0].engines.version}</h4><br>
+            <h4><span  id="span1">Layout</span><br>${data[0].engines.layout} </h4>
+            <h4><span  id="span1">Number</span><br>${data[0].engines.number} </h4>
         `
         document.getElementById("Info-I").innerHTML=`
             <p id="info2">Height--22.25mts--73ft</p>
@@ -42,7 +42,7 @@ function mostrar(){
             <p id="info2">Thrust--31KN--7000lbf</p>
             <progress value="${data[0].second_stage.thrust.kN}" max="1957"></progress>
         `
-        progress()
+        progress1()
       
     })
 }
@@ -63,8 +63,73 @@ function fun11(event){
             }
             event.target.classList.add("active");
             valor=event.target.value;
+            let x=valor-1
+            function bar_progress(){
+                fetch("https://api.spacexdata.com/v4/rockets")
+                .then(res=>res.json())
+                .then(data=>{
+                    let progresscbar1=document.getElementsByClassName('progressc1')[0];
+                    let blocken=document.getElementsByClassName('block');
+                
+                    for(var i = 1; i < 100; i ++){
+                        progresscbar1.innerHTML+=`<div class="block"></div>
+                        
+                        `
+                        blocken[i].style.transform="rotate("+3.6 * i +"deg)"
+                        blocken[i].style.animationDelay=`${i/45}s`;
+                
+                    }
+                    const circulo=document.querySelector('.circulo')
+                    let target = +circulo.getAttribute('data-target');
+                    let totalPH= data[x].success_rate_pct/100*36.0/100*36.0
+                    target=totalPH;
+                    for (let a = 0; a < target; a++) {
+                        blocken[a].classList.add('target')
+                    }
+                    
+                    let progresscbar22=document.getElementsByClassName('progressc2')[0];
+                    let block22=document.getElementsByClassName('block2');
+                
+                    for(var r = 1; r < 100; r ++){
+                        progresscbar22.innerHTML+=`<div class="block2"></div>`
+                        block22[r].style.transform="rotate("+3.6 * r +"deg)"
+                        block22[r].style.animationDelay=`${r/45}s`;
+                
+                    }
+                    const circulo2=document.querySelector('.circulo2')
+                    let target2 = +circulo2.getAttribute('data-target');
+                    let totalPD=data[x].engines.isp.sea_level/100*3.6
+                    target2=totalPD;
+                    for (let l = 0; l < target2; l++) {
+                        block22[l].classList.add('target2')
+                        
+                    }
+                    console.log(target2);
+                    
+                    let progressc33=document.getElementsByClassName('progressc3')[0];
+                    let block33=document.getElementsByClassName('block3');
+                
+                    for(var b = 1; b < 100; b ++){
+                        progressc33.innerHTML+=`<div class="block3"></div>`
+                        block33[b].style.transform="rotate("+3.6 * b+"deg)"
+                        block33[b].style.animationDelay=`${b/45}s`;
+                
+                    }
+                    const circulo3=document.querySelector('.circulo3')
+                    let target3 = +circulo3.getAttribute('data-target');
+                    let totalTw= data[x].engines.thrust_to_weight/100*36.0
+                    target3=totalTw;
+                    for (let c = 0; c < target3; c ++) {
+                        block33[c].classList.add('target3')
+                        
+                    }
+                    
+                })
+              
+            }
             if(valor==1){
                 mostrar()
+                bar_progress()
              
             }
             if(valor==2){
@@ -88,12 +153,12 @@ function fun11(event){
                 
                 })
                 document.getElementById("infocohete").innerHTML=`
-                    <h4><span id="span">Type</span> <br>${data[1].type}</h4><br>
-                    <h4><span  id="span">Propellant1</span><br> ${data[1].engines.propellant_1}</h4><br>
-                    <h4><span  id="span">Propellant2</span><br> ${data[1].engines.propellant_2}</h4><br>
-                    <h4><span  id="span">Version</span><br> ${data[1].engines.version}</h4><br>
-                    <h4><span  id="span">Layout</span><br>${data[1].engines.layout} </h4>
-                    <h4><span  id="span">Number</span><br>${data[1].engines.number} </h4>
+                    <h4><span id="span1">Type</span> <br>${data[1].type}</h4><br>
+                    <h4><span  id="span1">Propellant1</span><br> ${data[1].engines.propellant_1}</h4><br>
+                    <h4><span  id="span1">Propellant2</span><br> ${data[1].engines.propellant_2}</h4><br>
+                    <h4><span  id="span1">Version</span><br> ${data[1].engines.version}</h4><br>
+                    <h4><span  id="span1">Layout</span><br>${data[1].engines.layout} </h4>
+                    <h4><span  id="span1">Number</span><br>${data[1].engines.number} </h4>
                 `
                 document.getElementById("Info-I").innerHTML=`
                     <p id="info2">Height--70mts--229.6ft</p>
@@ -111,9 +176,9 @@ function fun11(event){
                     <p id="info2">Thrust--934KN--210000lbf</p>
                     <progress value="${data[1].second_stage.thrust.kN}" max="1957"></progress>
                 `
-                progreess1()
+                bar_progress()
             }
-            if(valor==3){
+            if(valor===3){
                 console.log(data[2].name)
                 document.getElementById("titulo").innerHTML=`
                     ${data[2].name}
@@ -134,12 +199,12 @@ function fun11(event){
                 
                 })
                 document.getElementById("infocohete").innerHTML=`
-                    <h4><span  id="span">Type</span><br>${data[2].type}</h4><br>
-                    <h4><span  id="span">Propellant1</span><br> ${data[2].engines.propellant_1}</h4><br>
-                    <h4><span id="span" >Propellant2</span><br> ${data[2].engines.propellant_2}</h4><br>
-                    <h4><span id="span">Version</span><br> ${data[2].engines.version}</h4><br>
-                    <h4><span id="span">Layout</span><br>${data[2].engines.layout} </h4>
-                    <h4><span id="span">Number</span><br>${data[2].engines.number} </h4>
+                    <h4><span  id="span1">Type</span><br>${data[2].type}</h4><br>
+                    <h4><span  id="span1">Propellant1</span><br> ${data[2].engines.propellant_1}</h4><br>
+                    <h4><span id="span1" >Propellant2</span><br> ${data[2].engines.propellant_2}</h4><br>
+                    <h4><span id="span1">Version</span><br> ${data[2].engines.version}</h4><br>
+                    <h4><span id="span1">Layout</span><br>${data[2].engines.layout} </h4>
+                    <h4><span id="span1">Number</span><br>${data[2].engines.number} </h4>
                 `
                 document.getElementById("Info-I").innerHTML=`
                     <p id="info2">Height--70mt--229.6ft</p>
@@ -157,10 +222,10 @@ function fun11(event){
                     <p id="info2">Thrust--934KN--210000lbf</p>
                     <progress value="${data[2].second_stage.thrust.kN}" max="1957"></progress>
                 `
-                progreess2()
+                bar_progress()
               
             }
-            if(valor==4){
+            if(valor===4){
                 console.log(data[3].name)
                 document.getElementById("titulo").innerHTML=`
                     ${data[3].name}
@@ -181,12 +246,12 @@ function fun11(event){
                 
                 })
                 document.getElementById("infocohete").innerHTML=`
-                    <h4><span id="span">Type</span><br>${data[3].type}</h4><br>
-                    <h4><span id="span">Propellant1</span><br> ${data[3].engines.propellant_1}</h4><br>
-                    <h4><span id="span">Propellant2</span><br> ${data[3].engines.propellant_2}</h4><br>
-                    <h4><span id="span">Version</span><br> No information</h4><br>
-                    <h4><span id="span">Layout</span><br> No information </h4><br>
-                    <h4><span id="span">Number</span><br>${data[3].engines.number} </h4>
+                    <h4><span id="span1">Type</span><br>${data[3].type}</h4><br>
+                    <h4><span id="span1">Propellant1</span><br> ${data[3].engines.propellant_1}</h4><br>
+                    <h4><span id="span1">Propellant2</span><br> ${data[3].engines.propellant_2}</h4><br>
+                    <h4><span id="span1">Version</span><br> No information</h4><br>
+                    <h4><span id="span1">Layout</span><br> No information </h4><br>
+                    <h4><span id="span1">Number</span><br>${data[3].engines.number} </h4>
                 `
                 document.getElementById("Info-I").innerHTML=`
                     <p id="info2">Height--118mt--387ft</p>
@@ -204,9 +269,7 @@ function fun11(event){
                     <p id="info2">Thrust--1957KN--440000lbf</p>
                     <progress value="${data[3].second_stage.thrust.kN}" max="1957"></progress>
                 `
-                progreess3()
-            
-
+                bar_progress()
             
             }
         }
@@ -214,7 +277,7 @@ function fun11(event){
     })
  
 }
-function progress(){
+function progress1(){
     fetch("https://api.spacexdata.com/v4/rockets")
     .then(res=>res.json())
     .then(data=>{
@@ -229,7 +292,7 @@ function progress(){
         }
         const circulo=document.querySelector('.circulo')
         let target = +circulo.getAttribute('data-target');
-        let totalPH= data[0].second_stage.payloads.composite_fairing.height.meters/100*36.0
+        let totalPH= data[0].success_rate_pct/100*36.0/100*36.0
         target=totalPH;
         for (let a = 0; a < target; a++) {
             blocked[a].classList.add('target')
@@ -246,12 +309,14 @@ function progress(){
         }
         const circulo2=document.querySelector('.circulo2')
         let target2 = +circulo2.getAttribute('data-target');
-        let totalPD= data[0].second_stage.payloads.composite_fairing.diameter.meters/100*36.0
+        let totalPD=data[0].engines.isp.sea_level/100*3.6
         target2=totalPD;
         for (let l = 0; l < target2; l++) {
             block22[l].classList.add('target2')
             
         }
+        console.log(target2);
+        
         let progressc33=document.getElementsByClassName('progressc3')[0];
         let block33=document.getElementsByClassName('block3');
     
@@ -269,189 +334,11 @@ function progress(){
             block33[c].classList.add('target3')
             
         }
-        console.log(target3)
+        
     })
   
 }
 
-function progreess1(){
-    fetch("https://api.spacexdata.com/v4/rockets")
-    .then(res=>res.json())
-    .then(data=>{
-        let progressc11=document.getElementsByClassName('progressc1')[0];
-        let blocked=document.getElementsByClassName('block');
-    
-        for(var i = 1; i < 100; i ++){
-            progressc11.innerHTML+=`<div class="block"></div>`
-            blocked[i].style.transform="rotate("+3.6 * i +"deg)"
-            blocked[i].style.animationDelay=`${i/45}s`;
-    
-        }
-        const circulo=document.querySelector('.circulo')
-        let target = +circulo.getAttribute('data-target');
-        let totalPH= data[1].second_stage.payloads.composite_fairing.height.meters/100*36.0
-        target=totalPH;
-        for (let a = 0; a < target; a++) {
-            blocked[a].classList.add('target')
-            
-        }
-        console.log(target)
-        let progressc22=document.getElementsByClassName('progressc2')[0];
-        let block22=document.getElementsByClassName('block2');
-    
-        for(var i = 1; i < 100; i ++){
-            progressc22.innerHTML+=`<div class="block2"></div>`
-            block22[i].style.transform="rotate("+3.6 * i +"deg)"
-            block22[i].style.animationDelay=`${i/45}s`;
-    
-        }
-        const circulo2=document.querySelector('.circulo2')
-        let target2 = +circulo2.getAttribute('data-target');
-        let totalPD= data[1].second_stage.payloads.composite_fairing.diameter.meters/100*36.0
-        target2=totalPD;
-        for (let a = 0; a < target2; a++) {
-            block22[a].classList.add('target2')
-            
-        }
-        console.log(target2)
-        let progressc33=document.getElementsByClassName('progressc3')[0];
-        let block33=document.getElementsByClassName('block3');
-    
-        for(var i = 1; i < 100; i ++){
-            progressc33.innerHTML+=`<div class="block3"></div>`
-            block33[i].style.transform="rotate("+3.6 * i +"deg)"
-            block33[i].style.animationDelay=`${i/45}s`;
-    
-        }
-        const circulo3=document.querySelector('.circulo3')
-        let target3 = +circulo3.getAttribute('data-target');
-        let totalTw= data[1].engines.thrust_to_weight/100*36.0
-        target3=totalTw;
-        for (let a = 0; a < target3; a++) {
-            block33[a].classList.add('target3')
-            
-        }
-        console.log(target3)
-    })
-}
-
-function progreess2(){
-    fetch("https://api.spacexdata.com/v4/rockets")
-    .then(res=>res.json())
-    .then(data=>{
-        let progressc11=document.getElementsByClassName('progressc1')[0];
-        let blocked=document.getElementsByClassName('block');
-    
-        for(var i = 1; i < 100; i ++){
-            progressc11.innerHTML+=`<div class="block"></div>`
-            blocked[i].style.transform="rotate("+3.6 * i +"deg)"
-            blocked[i].style.animationDelay=`${i/45}s`;
-    
-        }
-        const circulo=document.querySelector('.circulo')
-        let target = +circulo.getAttribute('data-target');
-        let totalPH= data[2].second_stage.payloads.composite_fairing.height.meters/100*36.0
-        target=totalPH;
-        for (let a = 0; a < target; a++) {
-            blocked[a].classList.add('target')
-            
-        }
-        let progressc22=document.getElementsByClassName('progressc2')[0];
-        let block22=document.getElementsByClassName('block2');
-    
-        for(var i = 1; i < 100; i ++){
-            progressc22.innerHTML+=`<div class="block2"></div>`
-            block22[i].style.transform="rotate("+3.6 * i +"deg)"
-            block22[i].style.animationDelay=`${i/45}s`;
-    
-        }
-        const circulo2=document.querySelector('.circulo2')
-        let target2 = +circulo2.getAttribute('data-target');
-        let totalPD= data[2].second_stage.payloads.composite_fairing.diameter.meters/100*36.0
-        target2=totalPD;
-        for (let a = 0; a < target2; a++) {
-            block22[a].classList.add('target2')
-            
-        }
-        let progressc33=document.getElementsByClassName('progressc3')[0];
-        let block33=document.getElementsByClassName('block3');
-    
-        for(var i = 1; i < 100; i ++){
-            progressc33.innerHTML+=`<div class="block3"></div>`
-            block33[i].style.transform="rotate("+3.6 * i +"deg)"
-            block33[i].style.animationDelay=`${i/45}s`;
-    
-        }
-        const circulo3=document.querySelector('.circulo3')
-        let target3 = +circulo3.getAttribute('data-target');
-        let totalTw= data[2].engines.thrust_to_weight/100*36.0
-        target3=totalTw;
-        for (let a = 0; a < target3; a++) {
-            block33[a].classList.add('target3')
-            
-        }
-        console.log(target3)
-    })
-}
-
-function progreess3(){
-    fetch("https://api.spacexdata.com/v4/rockets")
-    .then(res=>res.json())
-    .then(data=>{
-        let progressc11=document.getElementsByClassName('progressc1')[0];
-        let blocked=document.getElementsByClassName('block');
-    
-        for(var i = 1; i < 100; i ++){
-            progressc11.innerHTML+=`<div class="block"></div>`
-            blocked[i].style.transform="rotate("+3.6 * i +"deg)"
-            blocked[i].style.animationDelay=`${i/45}s`;
-    
-        }
-        const circulo=document.querySelector('.circulo')
-        let target = +circulo.getAttribute('data-target');
-        let totalPH= 0;
-        target=totalPH;
-        for (let a = 0; a < target; a++) {
-            blocked[a].classList.add('target')
-            
-        }
-        let progressc22=document.getElementsByClassName('progressc2')[0];
-        let block22=document.getElementsByClassName('block2');
-    
-        for(var i = 1; i < 100; i ++){
-            progressc22.innerHTML+=`<div class="block2"></div>`
-            block22[i].style.transform="rotate("+3.6 * i +"deg)"
-            block22[i].style.animationDelay=`${i/45}s`;
-    
-        }
-        const circulo2=document.querySelector('.circulo2')
-        let target2 = +circulo2.getAttribute('data-target');
-        let totalPD=0;
-        target2=totalPD;
-        for (let a = 0; a < target2; a++) {
-            block22[a].classList.add('target2')
-            
-        }
-        let progressc33=document.getElementsByClassName('progressc3')[0];
-        let block33=document.getElementsByClassName('block3');
-    
-        for(var i = 0; i < 100; i ++){
-            progressc33.innerHTML+=`<div class="block3"></div>`
-            block33[i].style.transform="rotate("+3.6 * i +"deg)"
-            block33[i].style.animationDelay=`${i/45}s`;
-    
-        }
-        const circulo3=document.querySelector('.circulo3')
-        let target3 = +circulo3.getAttribute('data-target');
-        let totalTw= data[3].engines.thrust_to_weight/100*36.0
-        target3=totalTw;
-        for (let a = 0; a < target3; a++) {
-            block33[a].classList.add('target3')
-            
-        }
-        console.log(target3)
-    })
-}
 
 
 

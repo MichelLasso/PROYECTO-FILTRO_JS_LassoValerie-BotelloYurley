@@ -62,7 +62,7 @@ function fun11(event){//creamos la anterior función y agregamos un parametros q
             event.target.classList.add("active");//y aqui le agregara el active a la que se clikeo recientemente
             valor=event.target.value;//obtener el value de los botones
             let x=valor-1 //a ese value le restamos 1 para obtener las posiciones dependiendo del boton clickeado
-            function bar_progress(){//creamos una nueva funcion donde recorreremos la info de la pregress bar circulares dependiendo cada posicion seh¿gun el boton
+            function bar_progress(){//creamos una nueva funcion donde recorreremos la info de la pregress bar circulares dependiendo cada posicion segun el boton
                 fetch("https://api.spacexdata.com/v4/rockets")
                 .then(res=>res.json())
                 .then(data=>{
@@ -79,7 +79,7 @@ function fun11(event){//creamos la anterior función y agregamos un parametros q
                     }
                     const circulo=document.querySelector('.circulo')
                     let target = +circulo.getAttribute('data-target');
-                    let totalPH= data[x].success_rate_pct/100*36.0/100*36.0
+                    let totalPH= data[x].success_rate_pct/100*36.0
                     target=totalPH;
                     for (let a = 0; a < target; a++) {
                         blocken[a].classList.add('target')

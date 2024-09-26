@@ -37,6 +37,7 @@ function fun11(event){//definimos en la funcion un arametro que conectaremos con
             event.target.classList.add("active");//agrega el active a la clase
             valor=event.target.value;//trae el value del boton clickeado
             y=valor-1//le restamos uno al value del boton clikeado para obtener la posición
+            
             function reducir(){//creamos una funcion para traer la info de la api con la anterior variable
                 console.log(historyDatos[y].name)
                 const date= historyDatos[y].event_date_utc
